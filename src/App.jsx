@@ -1,7 +1,7 @@
 import './App.css'
-import Todo from "./components/Todo";
-import AddTaskForm from "./components/AddTaskForm";
-import Modal from "./components/Modal";
+import Todo from "./components/Todo.tsx";
+import AddTaskForm from "./components/AddTaskForm.jsx";
+import Modal from "./components/Modal.tsx"; 
 import {useState} from 'react';
 import { nanoid } from "nanoid";
 

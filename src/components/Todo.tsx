@@ -1,7 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-function Todo(props) {
+interface TodoProps {
+    id: string;
+    name: string;
+    completed?: boolean;
+    toggleTaskCompleted: (id: string) => void;
+    deleteTask: (id: string) => void;
+  }
+  
+
+function Todo(props : TodoProps) {
 
     return (
         <li>

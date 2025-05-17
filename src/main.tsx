@@ -9,8 +9,12 @@ const DATA = [
   { id: "todo-2", name: "Repeat", completed: false },
 ];
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App tasks={DATA}/>
-  </StrictMode>,
-)
+const root = document.getElementById('root');
+
+if(root){
+  createRoot(root).render(
+    <StrictMode>
+      <App tasks={DATA}/>
+    </StrictMode>,
+  )
+}
