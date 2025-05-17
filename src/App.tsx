@@ -1,25 +1,28 @@
 import './App.css'
 import Todo from "./components/Todo.tsx";
-import AddTaskForm from "./components/AddTaskForm.jsx";
+import AddTaskForm from "./components/AddTaskForm.tsx";
 import Modal from "./components/Modal.tsx"; 
 import {useState} from 'react';
 import { nanoid } from "nanoid";
 
 
+interface AppProps {
+    tasks: Array<{id: string, name: string, completed:boolean}>;
+  }
 
-function App(props) {
+function App(props : AppProps) {
 
     const [taskList, setTaskList] = useState(props.tasks);
     const [isOpen, setOpen] = useState(false);
 
-    function addTask(name){
+    function addTask(name : string){
         const newTask = {id: `todo-${nanoid()}`, name, completed:false}
         setOpen(false)
         setTaskList([...taskList, newTask])
     }
     
 
-    function toggleTaskCompleted(id) {
+    function toggleTaskCompleted(id : string) {
         const updatedTasks = taskList.map((task) => {
           // if this task has the same ID as the edited task
           if (id === task.id) {
@@ -32,7 +35,7 @@ function App(props) {
         setTaskList(updatedTasks);
     }
 
-    function deleteTask(id){
+    function deleteTask(id : string){
         const remainingTasks = taskList.filter((task) => id !== task.id);
         setTaskList(remainingTasks);
     }

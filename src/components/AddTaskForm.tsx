@@ -3,7 +3,6 @@ import {useState} from 'react';
 
 interface TaskProps {
     onNewTask: (name: string) => void; // takes a string
-    onClose: () => void;
   }
 
 
